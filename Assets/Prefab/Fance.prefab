@@ -499,7 +499,7 @@ GameObject:
   - component: {fileID: 3387202690141772162}
   - component: {fileID: 7825405968633203551}
   m_Layer: 0
-  m_Name: Fancy
+  m_Name: Fance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
