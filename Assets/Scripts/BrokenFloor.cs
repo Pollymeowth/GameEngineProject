@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class BrokenFloor : MonoBehaviour
 {
-    public int life = 2;
+    public int life = 3;
 
     void Start()
     {
-        GetComponent<MeshRenderer>().material.color = new Color(0.3f, 0, 0);
+        GetComponent<MeshRenderer>().material.color = new Color(0.5f, 0.5f, 0.5f);
     }
 
     public void LostLife()
@@ -16,17 +16,21 @@ public class BrokenFloor : MonoBehaviour
         life--;
 
         if (life <= 0)
-            Destroy(gameObject); 
+            gameObject.SetActive(false); 
 
         if (life == 2)
         {
-            GetComponent<MeshRenderer>().material.color = new Color(0.6f, 0, 0);
+            GetComponent<MeshRenderer>().material.color = new Color(0.75f, 0.75f, 0.75f);
         }
 
         if (life == 1)
         {
-            GetComponent<MeshRenderer>().material.color = new Color(0.9f, 0, 0);
+            GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
         }
     }
-
+    public void ResetFloor()
+    {
+        life = 3;
+        GetComponent<MeshRenderer>().material.color = new Color(0.5f, 0.5f, 0.5f);
+    }
 }

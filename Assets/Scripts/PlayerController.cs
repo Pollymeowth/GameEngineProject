@@ -82,13 +82,12 @@ public class PlayerController : MonoBehaviour
         }
 
         //cria um chao que quebra, apos passar por cima dele
-        if (otherObject.GetComponents<BrokenFloor>() != null)
+        if (otherObject.GetComponent<BrokenFloor>() != null)
         {
             BrokenFloor brokenFloor;//cria variavel local
             brokenFloor = otherObject.GetComponent<BrokenFloor>();//acessa o componente (script) do objeto em que houve colisao e recebe o valor
             brokenFloor.LostLife(); //dentro do script acessa a funcao LostLife
         }
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -105,7 +104,10 @@ public class PlayerController : MonoBehaviour
             Destroy(other.gameObject);
             GameObject.FindAnyObjectByType<GameManager>().hasOrangeKey = true;
         }
-
+        if (other.CompareTag("CheckPoint"))
+        {
+            gm.ChangeCheckPoint(other.transform);
+        }
     }
 
 

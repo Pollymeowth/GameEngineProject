@@ -66,8 +66,14 @@
     <Compile Include="Assets/ButtomOpenDoor.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets/Toby Fredson/Dwarven Expedition Pack - Stylized Assets/Materials/1. Main Material Folder.txt" />
+    <None Include="Assets/Toby Fredson/Dwarven Expedition Pack - Stylized Assets/Models/1. Models.txt" />
+    <None Include="Assets/Toby Fredson/Dwarven Expedition Pack - Stylized Assets/Textures/1. Main Texture Folder.txt" />
     <None Include="Assets/Mushroom house/StandardDoubleSided.shader" />
+    <None Include="Assets/Toby Fredson/Dwarven Expedition Pack - Stylized Assets/1. Read Me!.txt" />
     <None Include="Assets/Customizable Skybox/Stylized Sky/Shaders/Stylized Sky.shader" />
+    <None Include="Assets/Toby Fredson/Dwarven Expedition Pack - Stylized Assets/Prefabs/1. Main Prefab Folder.txt" />
+    <None Include="Assets/Toby Fredson/Dwarven Expedition Pack - Stylized Assets/FreePack vs Full Pack/1. Free vs Full.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
