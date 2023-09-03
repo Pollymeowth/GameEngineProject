@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,12 +13,14 @@ public class GameManager : MonoBehaviour
     public Transform playerReference;
     public Transform currentCheckPoint;
     private Vector3 playerStartPosition;
-    private BrokenFloor[] brokenFloors; 
+    private BrokenFloor[] brokenFloors;
+    public TMP_Text textPoints;
 
     void Start()
     {
         playerStartPosition = playerReference.position;
         brokenFloors = FindObjectsOfType<BrokenFloor>();
+        
     }
 
     // Update is called once per frame
@@ -24,6 +28,8 @@ public class GameManager : MonoBehaviour
     {
         if (playerReference.position.y < yKillZone)
             ResetPlayerPosition();
+
+        textPoints.text = "Collectibles: " + points.ToString();
     }
 
     public void ChangeCheckPoint(Transform cp)
@@ -41,5 +47,6 @@ public class GameManager : MonoBehaviour
         }
            
     }
+
 }
 
