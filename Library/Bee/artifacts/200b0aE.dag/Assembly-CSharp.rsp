@@ -351,6 +351,7 @@
 "Assets/Scripts/BrokenFloor.cs"
 "Assets/Scripts/CameraFollow.cs"
 "Assets/Scripts/GameManager.cs"
+"Assets/Scripts/Menu.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/PowerUp.cs"
 "Assets/Scripts/Spring.cs"

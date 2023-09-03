@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
         if (otherObject.CompareTag("CubeChangeColor"))
         {
             otherObject.GetComponent<MeshRenderer>().material.color = Color.yellow;
+            gm.coloredBoxes++;
         }
 
         // para criar um sistema de mola no jogo (nesse codigo, quem controla a forca do impulso e a propria mola e nao o personagem)
@@ -107,6 +108,12 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("CheckPoint"))
         {
             gm.ChangeCheckPoint(other.transform);
+        }
+
+        if (other.CompareTag("EndGame"))
+        {
+            if (gm.coloredBoxes == 25 && gm.points==4)
+            gm.EndGame();
         }
     }
 

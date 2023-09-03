@@ -15,12 +15,15 @@ public class GameManager : MonoBehaviour
     private Vector3 playerStartPosition;
     private BrokenFloor[] brokenFloors;
     public TMP_Text textPoints;
+    public Image imageOrangeKey;
+    public int coloredBoxes = 0;
 
     void Start()
     {
         playerStartPosition = playerReference.position;
         brokenFloors = FindObjectsOfType<BrokenFloor>();
-        
+        imageOrangeKey.enabled = false;
+
     }
 
     // Update is called once per frame
@@ -30,6 +33,11 @@ public class GameManager : MonoBehaviour
             ResetPlayerPosition();
 
         textPoints.text = "Collectibles: " + points.ToString();
+
+        if (hasOrangeKey)
+        {
+            imageOrangeKey.enabled = true;
+        }
     }
 
     public void ChangeCheckPoint(Transform cp)
@@ -46,6 +54,17 @@ public class GameManager : MonoBehaviour
             b.ResetFloor();
         }
            
+    }
+    public void EndGame()
+    {   
+        SceneManager.LoadScene("WinGame");
+
+        if (Input.GetKeyDown(KeyCode.Space))
+            SceneManager.LoadScene("Level1");
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
+
     }
 
 }
