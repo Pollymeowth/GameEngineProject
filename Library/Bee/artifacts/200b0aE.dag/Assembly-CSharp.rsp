@@ -355,6 +355,7 @@
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/PowerUp.cs"
 "Assets/Scripts/Spring.cs"
+"Assets/Scripts/WinGameManager.cs"
 "Assets/SkythianCat/Glowing_Forest/Scripts/WaterGroup.cs"
 -langversion:9.0
 

@@ -65,6 +65,7 @@
     <Compile Include="Assets/SkythianCat/Glowing_Forest/Scripts/WaterGroup.cs" />
     <Compile Include="Assets/Scripts/BrokenFloor.cs" />
     <Compile Include="Assets/ButtomOpenDoor.cs" />
+    <Compile Include="Assets/Scripts/WinGameManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

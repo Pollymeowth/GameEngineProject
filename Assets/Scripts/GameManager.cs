@@ -17,13 +17,16 @@ public class GameManager : MonoBehaviour
     public TMP_Text textPoints;
     public Image imageOrangeKey;
     public int coloredBoxes = 0;
+    public TMP_Text textColoredBoxes;
 
-    void Start()
+    [SerializeField] private GameObject[] maxColoredBoxes;
+
+    void Awake()
     {
         playerStartPosition = playerReference.position;
         brokenFloors = FindObjectsOfType<BrokenFloor>();
         imageOrangeKey.enabled = false;
-
+        maxColoredBoxes = GameObject.FindGameObjectsWithTag("CubeChangeColor");
     }
 
     // Update is called once per frame
@@ -32,7 +35,8 @@ public class GameManager : MonoBehaviour
         if (playerReference.position.y < yKillZone)
             ResetPlayerPosition();
 
-        textPoints.text = "Collectibles: " + points.ToString();
+        textPoints.text = "Collectibles: " + points.ToString() + "/4" ;
+        textColoredBoxes.text = "Colored Boxes: " + coloredBoxes.ToString() + "/" + maxColoredBoxes.Length;
 
         if (hasOrangeKey)
         {
@@ -56,16 +60,9 @@ public class GameManager : MonoBehaviour
            
     }
     public void EndGame()
-    {   
-        SceneManager.LoadScene("WinGame");
-
-        if (Input.GetKeyDown(KeyCode.Space))
-            SceneManager.LoadScene("Level1");
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-            Application.Quit();
-
+    {
+        if (coloredBoxes >= maxColoredBoxes.Length && points == 4)
+            SceneManager.LoadScene("WinGame");
     }
-
 }
 

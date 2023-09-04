@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded;
     Rigidbody rb;
     public GameManager gm;
+    public float maxSpeed = 5;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +26,8 @@ public class PlayerController : MonoBehaviour
         Vector3 moveDirection = new(hMove, 0, vMove);
 
         rb.AddForce(moveDirection * speed);
+
+        rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x,-maxSpeed, maxSpeed), rb.velocity.y, Mathf.Clamp(rb.velocity.z, -maxSpeed, maxSpeed));
     }
 
     void Update()
@@ -41,9 +45,9 @@ public class PlayerController : MonoBehaviour
         GameObject otherObject = collision.gameObject;
 
         //ao colidir com otherObject ele verifica se tem a tag desejada e entao pinta o objeto
-        if (otherObject.CompareTag("CubeChangeColor"))
+        if (otherObject.CompareTag("CubeChangeColor") && otherObject.GetComponent<MeshRenderer>().material.color != Color.red)
         {
-            otherObject.GetComponent<MeshRenderer>().material.color = Color.yellow;
+            otherObject.GetComponent<MeshRenderer>().material.color = Color.red;
             gm.coloredBoxes++;
         }
 
@@ -112,7 +116,6 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("EndGame"))
         {
-            if (gm.coloredBoxes == 25 && gm.points==4)
             gm.EndGame();
         }
     }
