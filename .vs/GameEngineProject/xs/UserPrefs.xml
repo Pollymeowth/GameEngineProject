@@ -1,12 +1,12 @@
 ﻿<Properties StartupConfiguration="{B97B0CEA-6B82-D61D-6CBA-6BF0D0E4BA0C}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/WinGameManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="122" Column="6" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="64" Column="2" />
-      <File FileName="Assets/Scripts/BrokenFloor.cs" />
-      <File FileName="Assets/Scripts/CameraFollow.cs" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="118" Column="10" />
+      <File FileName="Assets/Scripts/BrokenFloor.cs" Line="11" Column="55" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="22" Column="22" />
+      <File FileName="Assets/Scripts/CameraFollow.cs" Line="20" Column="6" />
       <File FileName="Assets/Scripts/Menu.cs" Line="23" Column="1" />
-      <File FileName="Assets/Scripts/WinGameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/WinGameManager.cs" Line="25" Column="6" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,7 +14,7 @@
           <Node name="GameEngineProject" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="GameManager.cs" selected="True" />
+                <Node name="WinGameManager.cs" selected="True" />
               </Node>
             </Node>
           </Node>
